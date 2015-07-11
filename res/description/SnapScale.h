@@ -1,0 +1,29 @@
+#ifndef _SnapScale_H_
+#define _SnapScale_H_
+
+enum
+{
+	ID_MAIN_SCL= 1000,
+	IDB_X,
+	IDB_Y,
+	IDB_Z,
+	IDSCL_X,
+	IDSCL_Y,
+	IDSCL_Z,
+	IDB_BTN_SETSCL,
+	IDB_LOCKXYZ,
+	IDB_LOCKNONE,
+	IDG_LOCK,
+	MDATA_SCLSetValueX,	
+	MDATA_SCLSetValueY,	
+	MDATA_SCLSetValueZ,
+MDATA_BTN_SCLRESET,
+MDATA_BTN_SCLOK,
+
+//	MDATA_REVERS,
+//	MDATA_TAXUS,
+	MDATA_SCL_TEXT,
+	MDATA_SAVEB,
+};
+
+#endif

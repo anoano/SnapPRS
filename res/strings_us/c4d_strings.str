@@ -1,0 +1,13 @@
+// C4D-StringResource
+
+STRINGTABLE
+{
+	IDS_HLP_SNAPTRANSFER   "SnapPosition  Ctrl / On AxisGizmo   Shift / Edge Extrube & Polygon Copy   Alt / Mouse cursor stability";
+	IDS_SNAPTRANSFER       "SnapPosition";
+	IDS_SnapSR_TOOL_HLP "SnapRotate Ctrl/Quantizing   Shift/Orthogonal direction   Alt/Mouse cursor stability";
+	IDS_SnapRotate  "SnapRotate";
+	IDS_SnapSC_TOOL_HLP "SnapScale Ctrl / On AxisGizmo   Alt / Mouse cursor stability";
+	IDS_SnapScale "SnapScale";
+	IDS_SNAPPRS "SnapPRS v";
+	IDC_VER "1.65";
+}

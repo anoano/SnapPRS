@@ -1,0 +1,37 @@
+CONTAINER SnapScale
+{
+  NAME SnapScale;
+	GROUP ID_MAIN_SCL
+	{
+		DEFAULT 1;
+		GROUP
+		{
+			COLUMNS 2;
+			BUTTON IDB_BTN_SETSCL{}
+			BITMAPBUTTON 	MDATA_SAVEB {}
+		}
+		GROUP
+		{
+			COLUMNS 6;
+			BOOL IDB_X{}
+			REAL IDSCL_X { UNIT REAL;STEP 0.01;}
+			BOOL IDB_Y{}
+			REAL IDSCL_Y { UNIT REAL;STEP 0.01;}
+			BOOL IDB_Z{}
+			REAL IDSCL_Z { UNIT REAL;STEP 0.01;}
+		}
+		GROUP
+		{
+			LONG IDG_LOCK
+			{
+				CYCLE
+				{
+					IDB_LOCKNONE;
+					IDB_LOCKXYZ;
+				}
+			}
+
+		}
+	}
+	INCLUDE SnapTransfer;
+}

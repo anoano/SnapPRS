@@ -1,0 +1,22 @@
+STRINGTABLE SnapRotate
+{
+	ID_MAIN_ATR "Tool";
+	ID_ROT_X "Angle:";
+	IDB_BTN_SET "  Set  ";
+	IDE_MODE "Click Mode :";
+	CH_3SNAP "3 Click";
+	CH_2SNAP "2 Click";
+	ROT_ANGLE_VALUE "Direction";
+	SnapRotate "SnapRotate";
+	MDATA_SAVES ">";
+	MDATA_LIST "Axis Mode";
+	CH_WORLD "World";
+	CH_LOCAL "Local";
+	MDATA_EXTUBESUBDEV "Extrude Subdivision";
+	MDATA_CROSSPOSBTN "2Edge to Center";
+	MDATA_CROSSRESETBTN "Reset";
+	MDATA_SELECTMODE "Mode:";
+	CH_ROT "Rotate";
+	CH_EXTUBE "Extrude Rotate";
+	MDATA_SW2D "Flat";
+}

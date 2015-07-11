@@ -1,0 +1,284 @@
+CONTAINER SnapTransfer
+{
+  NAME SnapTransfer;
+//	INCLUDE ToolBase;
+
+	GROUP MDATA_G_MAINGROUP
+	{
+		DEFAULT 1;
+		GROUP
+		{
+			GROUP STtoolG
+			{
+				COLUMNS 4;
+				
+				LONG MDATA_SNAP_MODE
+				{
+					CYCLE
+					{
+						MDATA_CH_ALIGN;
+						MDATA_CH_POSFIX;
+					}
+				}
+				BOOL MDATA_BOOL_LINEALIGN{}
+				GROUP MDATA_GROUP_COPY
+				{
+					COLUMNS 3;
+					
+					LONG MDATA_BOOL_COPYCNT { MIN 1; STEP 1;}
+					BOOL MDATA_COPYINS {}
+					BOOL MDATA_RENDERINS {}
+				}
+				LONG MDATA_ACTIONLIST
+				{
+					CYCLE
+					{
+						CH_NONE;
+						CH_CUTPASTE;
+						CH_COPYPASTE;
+					}
+				}
+				BITMAPBUTTON 	MDATA_SAVE {}
+			}
+			GROUP PLANESET_G
+			{
+				DEFAULT 1;
+				LONG IDE_Snap_AXIS
+				{
+					CYCLE
+					{
+						IDE_XZ;
+						IDE_XY;
+						IDE_YZ;
+					//	IDE_NORMAL;
+					}
+				}
+				LINK	MDATA_DRAG_IDE_OBJ_TARGET 
+				{
+					ACCEPT
+					{
+						Obase;
+					}
+					REFUSE
+					{
+						Osky;
+						Oforeground;
+					}
+				}
+				GROUP
+				{
+					COLUMNS 3;
+
+					BUTTON MDATA_SETAXIS { }
+					BUTTON MDATA_RESET {  }
+			//		BOOL MADATA_SW_PLANEWORLD{}
+				}
+			}
+			SEPARATOR { LINE; }
+			GROUP STop
+			{
+				COLUMNS 3;
+				BOOL MDATA_CHILD{}
+				BOOL MDATA_OPTIMIZE{}
+				BOOL MDATA_BOOL_IDE_UVFIX{}
+				BOOL MDATA_SELTAG{}
+			}
+			SEPARATOR { LINE; }
+			GROUP
+			{
+				COLUMNS 2;
+				BOOL MDATA_BOOL_OFFSET{}
+				BOOL MDATA_NORMALPOSITION{}
+
+				
+			}
+			GROUP ValueOFF
+			{
+				COLUMNS 6;
+				BOOL MDATA_SNAP_AX {}
+				REAL MDATA_SNAP_VALUEX { UNIT METER; }
+				BOOL MDATA_SNAP_AY {}
+				REAL MDATA_SNAP_VALUEY { UNIT METER;}
+				BOOL MDATA_SNAP_AZ {}
+				REAL MDATA_SNAP_VALUEZ { UNIT METER;}
+				BUTTON MDATA_BTN_VRESET{}
+			}
+			GROUP GROUP_P
+			{
+				DEFAULT 1;
+				VECTOR MDATA_PVECTOR { UNIT METER;}
+				REAL MDATA_LENGTHE { UNIT METER;}
+			}
+		}
+	}
+	GROUP ID_MAIN_SNAP
+	{
+		DEFAULT 1;
+		GROUP
+		{
+			COLUMNS 3;
+			BOOL SNAP_ENABLEG { }
+			BOOL SNAP_PRE{}
+			COLOR PRE_COLOR {  }
+			BOOL MDATA_VISIBLE{}
+		}
+		GROUP SNAP_GROUPG
+		{
+			DEFAULT 1;
+			GROUP
+			{
+				COLUMNS 2;
+				LONG SNAP_METHODG { CYCLE { SNAP_AUTO; SNAP_2DG; SNAP_3DG; } }
+				LONG SNAP_RADIUSG { MIN 1; }
+				
+			}
+			GROUP
+			{
+				BOOL SNAP_QUANTIZUNG{}
+			}
+			GROUP
+			{
+				COLUMNS 3;
+
+				BOOL SNAP_POINTG { } //ポイント
+				BOOL SNAP_SPLINEG { } //スプライン
+				BOOL SNAP_MIDPOINTG { }
+//*******************************************************************
+				BOOL SNAP_EDGEG { } //エッジ
+				BOOL SNAP_AXISG { } //アクシズ
+				STATICTEXT { DUMMY; }
+				
+				
+//*******************************************************************
+				BOOL SNAP_POLYGONG { } //ポリゴン
+				BOOL SNAP_INTERSECTIONG { }
+
+				LONG SNAP_SECTION {MIN 2; STEP 1;}
+			//	STATICTEXT { DUMMY; }
+
+//*******************************************************************
+			}
+			SEPARATOR { LINE; }
+			GROUP
+			{
+				COLUMNS 3;
+				BOOL SNAP_WORKPLANEG{}
+				BOOL SNAP_GRIDG { } //グリッド
+				BOOL SNAP_GRIDLINEG { }
+			}
+			SEPARATOR { LINE; }
+//*******************************************************************
+			GROUP
+			{
+				COLUMNS 3;
+				BOOL SNAP_GUIDE_SNAPG{}
+				BOOL SNAP_DYNAMICGUIDE_SNAPG{}
+				BOOL SNAP_PERPENDICULARG { } //垂直	
+			}
+		}
+	}
+	GROUP MDATA_GRID_GROUP
+	{
+		DEFAULT 1;
+		BOOL MDATA_BOOL_GRID_FLAG{ANIM OFF; } 
+		
+		REAL MDATA_GRID_VALUE {  ANIM OFF; UNIT METER;MINEX;  MIN 0; STEP 1;}
+		LONG MDATA_GRIDLINE { ANIM OFF; MIN 0; STEP 1; }
+		LONG MDATA_LINE { ANIM OFF; MIN 0; STEP 1; }
+		LONG MDATA_GRID_LIST
+		{
+			ANIM OFF;
+			CYCLE
+			{
+				CH_GRID_L0;
+				CH_GRID_L1;
+				CH_GRID_L2;
+				CH_GRID_L3;
+				CH_GRID_L4;
+			}
+		}
+	}
+
+//	INCLUDE ToolSnapping;
+}
+
+
+
+/*
+
+CONTAINER ToolSnapping
+{
+  NAME ToolSnapping;
+
+	GROUP SNAP_OUTER
+	{
+		GROUP
+		{
+			COLUMNS 2;
+
+			BOOL SNAP_ENABLE { }
+			BOOL SNAP_PLANE { }
+		}
+
+		GROUP SNAP_GROUP
+		{
+			DEFAULT 1;
+
+			GROUP
+			{
+				COLUMNS 2;
+
+				LONG SNAP_METHOD { CYCLE { SNAP_2D; SNAP_25D; SNAP_3D; } }
+				LONG SNAP_RADIUS { MIN 0; }
+			}
+
+			GROUP
+			{
+				COLUMNS 3;
+
+				BOOL SNAP_POINT { }
+				BOOL SNAP_GRID { }
+				BOOL SNAP_AXIS { }
+
+				BOOL SNAP_EDGE { }
+				BOOL SNAP_GRIDLINE { }
+				BOOL SNAP_PERPENDICULAR { }
+
+				BOOL SNAP_POLYGON { }
+				BOOL SNAP_TANGENT { }
+				STATICTEXT { DUMMY; }
+
+				BOOL SNAP_FACECENTER { }
+				BOOL SNAP_SPLINE { }
+				STATICTEXT { DUMMY; }
+
+				BOOL SNAP_MIDPOINT { }
+				BOOL SNAP_SPLINEGRID { }
+				LONG SNAP_SPLINESUB { }
+			}
+		}
+
+		GROUP SNAP_QUANTIZE
+		{
+			DEFAULT 1;
+
+			COLUMNS 2;
+
+			BOOL SNAP_LOCAL_MOVEENABLE { }
+			REAL SNAP_LOCAL_MOVE { UNIT METER; }
+
+			BOOL SNAP_LOCAL_SCALEENABLE { }
+			REAL SNAP_LOCAL_SCALE { UNIT PERCENT; }
+
+			BOOL SNAP_LOCAL_ROTATEENABLE { }
+			REAL SNAP_LOCAL_ROTATE { UNIT DEGREE; }
+
+			BOOL SNAP_LOCAL_TEXTUREENABLE { }
+			REAL SNAP_LOCAL_TEXTURE { UNIT PERCENT; }
+
+			BOOL SNAP_LOCAL_TOOLENABLE { }
+			REAL SNAP_LOCAL_TOOL { UNIT METER; }
+		}
+	}
+}
+*/

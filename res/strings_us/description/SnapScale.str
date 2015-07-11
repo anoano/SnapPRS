@@ -1,0 +1,15 @@
+STRINGTABLE SnapScale
+{
+	SnapScale "SnapScale";
+	ID_MAIN_SCL "Tool";
+	IDB_X "X :";
+	IDB_Y "Y :";
+	IDB_Z "Z :";
+
+	IDB_BTN_SETSCL "  Set Scale  ";
+	IDB_LOCKXYZ "Magnification scale";
+	IDB_LOCKNONE "Free Scale";
+	IDG_LOCK "Scale Mode";
+	MDATA_SAVEB ">";
+
+}

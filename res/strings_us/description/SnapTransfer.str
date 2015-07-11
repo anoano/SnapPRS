@@ -1,0 +1,91 @@
+STRINGTABLE SnapTransfer
+{
+  SnapTransfer	"SnapPosition";
+
+	MDATA_SNAP_AX	"X :";
+	MDATA_SNAP_AY	"Y :";
+	MDATA_SNAP_AZ	"Z :";
+//	MDATA_SNAP_VALUEX "X:";
+//	MDATA_SNAP_VALUEY "Y:";
+//	MDATA_SNAP_VALUEZ "Z:";
+	MDATA_CH_ALIGN "Align";
+	MDATA_CH_POSFIX "Move";
+	MDATA_SNAP_MODE "Mode:";
+	MDATA_BOOL_OFFSET "Offset";
+	MDATA_SNAXIS "Construction Plane";
+	MDATA_SETAXIS "Set 3PointPlane";
+	MDATA_RESET "Workplane Reset";
+
+	ID_MAIN_SNAP "Snapping";
+
+	MDATA_OPTIMIZE "Weld";
+	MDATA_DRAG_IDE_OBJ_TARGET "PlaneObject";
+	MDATA_G_MAINGROUP "Option";
+	MDATA_BOOL_IDE_UVFIX "Fix UVW";
+	MDATA_BTN_VRESET "     Reset     ";
+
+	SNAP_ENABLEG "Enable Snapping";
+	SNAP_POINTG "Vertex";
+	SNAP_EDGEG "Edge";
+	SNAP_POLYGONG "Polygon";
+	SNAP_GRIDG "Grid Point";
+	SNAP_GRIDLINEG "Grid Line";
+	SNAP_SPLINEG "Spline";
+	SNAP_AXISG "Axis";
+	SNAP_PERPENDICULARG "Perpendicular";
+	SNAP_MIDPOINTG "Midpoint";
+	SNAP_RADIUSG "Radius";
+	SNAP_METHODG "Type";
+	SNAP_AUTO "Auto Snapping";
+	SNAP_2DG "2D Snapping";
+	SNAP_3DG "3D Snapping";
+	SNAP_INTERSECTIONG"Intersection";
+	SNAP_WORKPLANEG "Workplane";
+	SNAP_GUIDE_SNAPG "Guide";
+	SNAP_DYNAMICGUIDE_SNAPG "Dynamic Guide";
+	SNAP_QUANTIZUNG "Enable Quantizing";
+
+	MDATA_GRID_GROUP "World Grid";
+	MDATA_BOOL_GRID_FLAG "Lagacy Mode";	
+	MDATA_GRID_VALUE "Grid Spacing";
+	MDATA_GRIDLINE "Lines";
+	MDATA_LINE "Majar Lines Every nth";
+	MDATA_GRID_LIST "Dynamic Grid";
+	CH_GRID_L0 "None";
+	CH_GRID_L1 "1..10";
+	CH_GRID_L2 "1..5..10";
+	CH_GRID_L3 "1..2..5..10";
+	CH_GRID_L4 "1..2,5..5..10";
+	
+
+	MDATA_CHILD "Child";
+	MDATA_PVECTOR "X : Y : Z =";
+	MDATA_LENGTHE"Distance :";
+	GROUP_P "Coordinates & Distance";
+	PLANESET_G "Plane Settings";
+	MDATA_BOOL_LINEALIGN "Linear line";
+	MDATA_BOOL_COPYPOLY "Copy";
+	MDATA_BOOL_COPYCNT "Copy Count";
+	MDATA_COPYINS "Instance";
+	DRAG_IDE_DP_SNAP_CROSS "Spline Cross";
+	IDE_Snap_AXIS "Plane";
+	IDE_XZ "XZ";
+	IDE_XY "XY";
+	IDE_YZ "YZ";
+	SNAP_GROUPG "Snapping";
+	MDATA_NORMALPOINT "Normal Offset";
+	MDATA_NORMALPOSITION "Normal Position";
+
+	SNAP_PRE "Preview";
+	MDATA_SAVE ">";
+	SNAP_SECTION "Subdiv";
+	MDATA_VISIBLE "Visible Only";
+
+ 	MDATA_ACTIONLIST "Snap target:";
+ 	CH_COPYPASTE "Add Poly Cpoy & Paste";
+ 	CH_CUTPASTE "Add Poly Cut & Paste";
+	CH_NONE "None";
+	MDATA_SELTAG "UVW Tag & PolySelecttion Tag Update";
+	MDATA_RENDERINS "Render Instance";
+	MADATA_SW_PLANEWORLD "Ortho to World axis";
+}
